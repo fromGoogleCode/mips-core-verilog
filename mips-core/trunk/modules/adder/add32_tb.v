@@ -1,4 +1,4 @@
-`include "add32.v"
+`include "modules/adder/add32.v"
 
 module add32pg_tb();
 

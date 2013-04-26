@@ -20,6 +20,16 @@ module ex_mem(clk,
   output reg MEM_alu_zero;
   output reg [4:0] MEM_rd;
   
+  initial begin
+    MEM_bpc <=0;
+    MEM_alu_out <= 0;
+    MEM_rd2 <= 0;
+    MEM_ctlwb <= 0;
+    MEM_ctlm <= 0;
+    MEM_alu_zero <= 0;
+    MEM_rd <= 0;
+  end
+  
   always @(posedge clk) begin
     MEM_bpc      <= EX_bpc;
     MEM_alu_out  <= EX_alu_out;

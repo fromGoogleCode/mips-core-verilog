@@ -15,8 +15,8 @@ module inst_mem_tb();
   always
     #4 addr = addr + 1;
     
-  always @(data)
-     $display("%t %m Address: %d  Data: %h", $time, addr, data);
+  always @(addr)
+     $display("Address: %d  Data: %b", addr, data);
     
   initial begin
     $dumpfile("test.vcd");
@@ -24,7 +24,7 @@ module inst_mem_tb();
     
    
   
-    #50 $finish;
+    #125 $finish;
   end
 
 endmodule

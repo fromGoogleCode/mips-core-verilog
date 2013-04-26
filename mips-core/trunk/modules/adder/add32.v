@@ -3,11 +3,11 @@
 `endif
 
 `ifndef _add16pg_v_
-`include "add16pg.v"
+`include "modules/adder/add16pg.v"
 `endif
 
 `ifndef _pg2_v_
-`include "pg2.v"
+`include "modules/adder/pg2.v"
 `endif
 
 module add32(a, b, cin, s, cout);

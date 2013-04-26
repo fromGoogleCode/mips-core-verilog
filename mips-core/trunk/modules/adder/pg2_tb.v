@@ -1,4 +1,4 @@
-`include "pg2.v"
+`include "modules/adder/pg2.v"
 
 module pg2_tb();
 

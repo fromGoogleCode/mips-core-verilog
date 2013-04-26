@@ -3,11 +3,11 @@
 `endif
 
 `ifndef _add4pg_v_
-`include "add4pg.v"
+`include "modules/adder/add4pg.v"
 `endif
 
 `ifndef _pg4_v_
-`include "pg4.v"
+`include "modules/adder/pg4.v"
 `endif
 
 module add16pg(a, b, cin, s, PG, GG);

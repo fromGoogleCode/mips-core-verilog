@@ -1,4 +1,4 @@
-`include "add1pg.v"
+`include "modules/adder/add1pg.v"
 
 module add1pg_tb();
 

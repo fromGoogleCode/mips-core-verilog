@@ -21,6 +21,12 @@ module id_ex(clk,
   output reg [31:0] EX_npc, EX_rd1, EX_rd2, EX_imm;
   output reg [4:0] EX_rt, EX_rd;
   
+  initial begin
+    EX_ctlwb <= 0;
+    EX_ctlm <= 0;
+    EX_ctlex <= 0;
+  end
+  
   always @(posedge clk) begin
     EX_ctlwb <= ID_ctlwb;
     EX_ctlm  <= ID_ctlm;

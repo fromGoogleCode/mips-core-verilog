@@ -1,7 +1,7 @@
 //Filename:testmux.v
 //Description: Testing the 32bit mux module
 //of the IF stage of the pipeline.
-`include "mux2_n.v"
+`include "modules/mux2_n.v"
 
 module mux2_n_tb();
 
