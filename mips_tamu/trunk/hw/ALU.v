@@ -74,7 +74,7 @@ module ALU(BusW, Zero, BusA, BusB, ALUCtrl);
               //Zero=1'bx;
             end
       `NOR:  begin  // Bitwise NOR
-              BusW= BusA ~| BusB;
+              BusW= ~(BusA | BusB);
               //Zero=1'bx;
             end
       `SRA:  begin  // Arithmetic Right Shift
