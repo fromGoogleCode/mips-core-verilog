@@ -34,6 +34,23 @@ module ALUControl(ALUCtrl, ALUop, FuncCode);
   assign ALUCtrl = (op_select) ? (decoded_FuncCode) : (ALUop); // Output Mux
   
   // Generate control signals from FuncCode
-
+  always @(*) begin
+    case (FuncCode)
+      `SLLFunc:  decoded_FuncCode = `SLL;
+      `SRLFunc:  decoded_FuncCode = `SRL;
+      `SRAFunc:  decoded_FuncCode = `SRA;
+      `ADDFunc:  decoded_FuncCode = `ADD;
+      `ADDUFunc: decoded_FuncCode = `ADDU;
+      `SUBFunc:  decoded_FuncCode = `SUB;
+      `SUBUFunc: decoded_FuncCode = `SUBU;
+      `ANDFunc:  decoded_FuncCode = `AND;
+      `ORFunc:   decoded_FuncCode = `OR;
+      `XORFunc:  decoded_FuncCode = `XOR;
+      `NORFunc:  decoded_FuncCode = `NOR;
+      `SLTFunc:  decoded_FuncCode = `SLT;
+      `SLTUFunc: decoded_FuncCode = `SLTU;
+      default:   decoded_FuncCode = 4'bx;
+    endcase
+  end
 
 endmodule

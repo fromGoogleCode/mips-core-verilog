@@ -15,7 +15,7 @@ module DataMemory ( ReadData , Address , WriteData , MemoryRead , MemoryWrite , 
   
   reg [31:0] data [DataMemory_Size/4:0];        // The actual stored data
   
-  always @(*) begin                             
+  always @(posedge Clock) begin                             
     if (MemoryRead)
       ReadData <= data[Address];                
     else

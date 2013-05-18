@@ -54,7 +54,7 @@ module ALU(BusW, Zero, BusA, BusB, ALUCtrl);
               //Zero=1'bx;
             end
       `SLT:  begin   // Set less than (A<B)
-              BusW={31'b0, (BusA<BusB)};
+              BusW={31'b0, ( $signed(BusA) < $signed(BusB) )};
               //Zero=1'bx;
             end
       `ADDU:  begin  // Unsigned Add 
@@ -70,7 +70,7 @@ module ALU(BusW, Zero, BusA, BusB, ALUCtrl);
               //Zero=1'bx;
             end
       `SLTU:  begin  // Set Less Than unsigned
-              BusW= {31'b0, (BusA<BusB)};
+              BusW= {31'b0, (BusA < BusB)};
               //Zero=1'bx;
             end
       `NOR:  begin  // Bitwise NOR
